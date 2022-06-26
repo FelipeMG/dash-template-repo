@@ -1,8 +1,7 @@
-import dash
-from dash import html , dcc
 import dash_bootstrap_components as dbc
+from dash_labs.plugins.pages import register_page
 
-dash.register_page(__name__, path="/")
+register_page(__name__, path="/")
 
 from components.kpi.kpibadge import kpibadge
 from components.kpi.kpiplot import kpiplot
@@ -12,6 +11,7 @@ from components.maps.mapsample import mapsample
 
 
 kpi3plot = kpiplot('Total KPI', df_costos['VALUE'], 'count')
+kpi4plot = kpiplot('Total User', df_costos['VALUE'], 'count')
 
 kpi1 = kpibadge('325', 'Total kpi', 'Danger')
 kpi2 = kpibadge('1500', 'Total sales', 'Approved')
